@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Conditionals</title>
+    <style>
+      /* Existing styles */
+      .title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .title-l2 {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .title-l1 {
+        font-size: 18px;
+        color: gray;
+      }
+      .l2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+      .l1 {
+        font-size: 18px;
+        color: gray;
+        margin-bottom: 15px;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      /* New styles for custom audio controls */
+      .audio-section {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .audio-player {
+        display: inline-block;
+        width: 100%;
+        max-width: 600px; /* Adjust as needed */
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .controls button,
+      .controls select {
+        background-color: #f0f0f0;
+        border: none;
+        margin: 0 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .controls button:hover,
+      .controls select:hover {
+        background-color: #e0e0e0;
+      }
+      .progress {
+        width: 100%;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+      .progress input[type="range"] {
+        flex-grow: 1;
+      }
+      .time {
+        font-size: 14px;
+        margin-left: 10px;
+        width: 70px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Title Rows -->
+    <div class="title">
+      <div class="title-l2">Conditionals</div>
+      <div class="title-l1">Condicionals</div>
+    </div>
+
+    <!-- Audio Players with Custom Controls -->
+    <div class="audio-section">
+      <div class="audio-player">
+        <audio id="audio1" src="L2.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio1')">« 5s</button>
+          <button onclick="playPause('audio1')" id="playPauseBtn1">Play</button>
+          <button onclick="skip('audio1')">5s »</button>
+          <select onchange="changeSpeed('audio1', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar1" value="0" step="0.1" min="0" max="100" onchange="seek('audio1', this.value)">
+          <div class="time" id="time1">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="audio-section">
+      <div class="audio-player">
+        <audio id="audio2" src="L2L1.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio2')">« 5s</button>
+          <button onclick="playPause('audio2')" id="playPauseBtn2">Play</button>
+          <button onclick="skip('audio2')">5s »</button>
+          <select onchange="changeSpeed('audio2', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar2" value="0" step="0.1" min="0" max="100" onchange="seek('audio2', this.value)">
+          <div class="time" id="time2">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display Combined Data -->
+  
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Hey everyone! Let's chat about globalization and migration while exploring conditionals in English. These topics are all around us, so it's a great way to practice.</div>
+    <div class="l1">Hola a tothom! Parlem sobre la globalització i la migració mentre explorem els condicionals en anglès. Aquests temes són a tot arreu, així que és una gran manera de practicar.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">First up is the zero conditional. We use it for facts or things that are always true. For example: "If people migrate, they adapt to new cultures." This means whenever people migrate, this happens.</div>
+    <div class="l1">Primer tenim el condicional zero. L'utilitzem per a fets o coses que sempre són veritat. Per exemple: "If people migrate, they adapt to new cultures." Això significa que sempre que la gent migra, això passa.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">In a negative way: "If communities don't embrace diversity, tensions arise." So if something doesn't happen, another thing occurs.</div>
+    <div class="l1">En forma negativa: "If communities don't embrace diversity, tensions arise." Així que si alguna cosa no passa, una altra cosa ocorre.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">As a question: "What happens if people move to a new country?" We're asking about the usual result of this action.</div>
+    <div class="l1">Com a pregunta: "What happens if people move to a new country?" Estem preguntant sobre el resultat habitual d'aquesta acció.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Next is the first conditional, used for real possibilities in the future. For instance: "If I learn Spanish, I'll communicate better when I move to Spain." This is a real chance in the future.</div>
+    <div class="l1">A continuació, el primer condicional, que s'utilitza per a possibilitats reals en el futur. Per exemple: "If I learn Spanish, I'll communicate better when I move to Spain." Aquesta és una possibilitat real en el futur.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Negatively: "If we don't address climate change, more people will be forced to migrate." Here, not doing something leads to a future consequence.</div>
+    <div class="l1">En forma negativa: "If we don't address climate change, more people will be forced to migrate." Aquí, no fer alguna cosa porta a una conseqüència futura.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Question form: "Will you migrate if you get that job offer abroad?" Asking about a possible future action.</div>
+    <div class="l1">Forma de pregunta: "Will you migrate if you get that job offer abroad?" Preguntant sobre una possible acció futura.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Then there's the second conditional, for unreal or hypothetical situations now or in the future. Example: "If I had a visa, I would move to Canada." I don't have a visa, but I'm imagining.</div>
+    <div class="l1">Després hi ha el segon condicional, per a situacions irreals o hipotètiques ara o en el futur. Exemple: "If I had a visa, I would move to Canada." No tinc un visat, però estic imaginant.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Negative form: "If globalization didn't exist, we wouldn't enjoy international cuisines." Imagining a world that's different from ours.</div>
+    <div class="l1">Forma negativa: "If globalization didn't exist, we wouldn't enjoy international cuisines." Imaginant un món diferent del nostre.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Question: "What would you do if you lived in another country?" Asking about a hypothetical situation.</div>
+    <div class="l1">Pregunta: "What would you do if you lived in another country?" Preguntant sobre una situació hipotètica.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Now, the third conditional talks about unreal situations in the past. For example: "If she had studied international law, she would have worked at the UN." She didn't study it, so it didn't happen.</div>
+    <div class="l1">Ara, el tercer condicional parla de situacions irreals en el passat. Per exemple: "If she had studied international law, she would have worked at the UN." Ella no va estudiar-ho, així que no va passar.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Negative way: "If they hadn't migrated, they wouldn't have experienced new cultures." They did migrate, so they did experience them.</div>
+    <div class="l1">En forma negativa: "If they hadn't migrated, they wouldn't have experienced new cultures." Van migrar, així que van experimentar-les.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Question form: "What would have happened if you hadn't moved abroad?" Wondering about a past that didn't occur.</div>
+    <div class="l1">Forma de pregunta: "What would have happened if you hadn't moved abroad?" Preguntant sobre un passat que no va ocórrer.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Lastly, the mixed conditional combines past and present. For instance: "If I had saved money, I would be traveling now." My past action affects my present situation.</div>
+    <div class="l1">Finalment, el condicional mixt combina passat i present. Per exemple: "If I had saved money, I would be traveling now." La meva acció passada afecta la meva situació present.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Negative example: "If he hadn't left his country, he wouldn't be bilingual now." A past event influencing the present.</div>
+    <div class="l1">Exemple negatiu: "If he hadn't left his country, he wouldn't be bilingual now." Un esdeveniment passat que influeix en el present.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">Question: "If you had accepted that job overseas, where would you be living now?" Mixing past decisions with present outcomes.</div>
+    <div class="l1">Pregunta: "If you had accepted that job overseas, where would you be living now?" Barrejant decisions passades amb resultats presents.</div>
+    
+    <div class="l2"></div>
+    <div class="l1"></div>
+    
+    <div class="l2">So, conditionals help us talk about possibilities, imaginations, and consequences related to globalization and migration. Pretty handy, right? Let me know if you have any questions!</div>
+    <div class="l1">Així doncs, els condicionals ens ajuden a parlar de possibilitats, imaginacions i conseqüències relacionades amb la globalització i la migració. Força útils, oi? Feu-me saber si teniu alguna pregunta!</div>
+    
+    <script>
+      // Function to toggle play/pause
+      function playPause(audioId) {
+        var audio = document.getElementById(audioId);
+        var playPauseBtn = document.getElementById('playPauseBtn' + audioId.slice(-1));
+        if (audio.paused) {
+          audio.play();
+          playPauseBtn.textContent = 'Pause';
+        } else {
+          audio.pause();
+          playPauseBtn.textContent = 'Play';
+        }
+      }
+
+      // Function to rewind 5 seconds
+      function rewind(audioId) {
+        var audio = document.getElementById(audioId);
+        audio.currentTime = Math.max(0, audio.currentTime - 5);
+      }
+
+      // Function to skip forward 5 seconds
+      function skip(audioId) {
+        var audio = document.getElementById(audioId);
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+      }
+
+      // Function to change playback speed
+      function changeSpeed(audioId, speed) {
+        var audio = document.getElementById(audioId);
+        audio.playbackRate = parseFloat(speed);
+      }
+
+      // Function to update progress bar and time
+      function updateProgress(audioId, progressBarId, timeId) {
+        var audio = document.getElementById(audioId);
+        var progressBar = document.getElementById(progressBarId);
+        var timeDisplay = document.getElementById(timeId);
+        if (audio.duration) {
+          progressBar.value = (audio.currentTime / audio.duration) * 100;
+          timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+        }
+      }
+
+      // Function to format time in mm:ss
+      function formatTime(seconds) {
+        var minutes = Math.floor(seconds / 60);
+        var seconds = Math.floor(seconds % 60);
+        if (seconds < 10) {
+          seconds = '0' + seconds;
+        }
+        return minutes + ':' + seconds;
+      }
+
+      // Function to seek in the audio
+      function seek(audioId, value) {
+        var audio = document.getElementById(audioId);
+        audio.currentTime = (value / 100) * audio.duration;
+      }
+
+      // Event listeners for updating progress bars and time
+      var audio1 = document.getElementById('audio1');
+      audio1.addEventListener('timeupdate', function() {
+        updateProgress('audio1', 'progressBar1', 'time1');
+      });
+      audio1.addEventListener('ended', function() {
+        document.getElementById('playPauseBtn1').textContent = 'Play';
+      });
+      audio1.addEventListener('loadedmetadata', function() {
+        updateProgress('audio1', 'progressBar1', 'time1');
+      });
+
+      var audio2 = document.getElementById('audio2');
+      audio2.addEventListener('timeupdate', function() {
+        updateProgress('audio2', 'progressBar2', 'time2');
+      });
+      audio2.addEventListener('ended', function() {
+        document.getElementById('playPauseBtn2').textContent = 'Play';
+      });
+      audio2.addEventListener('loadedmetadata', function() {
+        updateProgress('audio2', 'progressBar2', 'time2');
+      });
+    </script>
+  </body>
+</html>
+  
